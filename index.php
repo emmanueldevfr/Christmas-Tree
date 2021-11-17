@@ -30,17 +30,17 @@
 
             }
 
-            function display_etage($nb_etage) {
+            function display_floor($nb_floor) {
                 global $nb_star_current;
-                $pos_etage = 1;
-                while ($pos_etage <= $nb_etage) {
-                    display_line($pos_etage + 3);
-                    $pos_etage += 1;
+                $pos_floor = 1;
+                while ($pos_floor <= $nb_floor) {
+                    display_line($pos_floor + 3);
+                    $pos_floor += 1;
                     $nb_star_current -= 4;
                 }
             }
             
-            display_etage(5); 
+            display_floor(5); 
 
            
             $nb_barre = 5;

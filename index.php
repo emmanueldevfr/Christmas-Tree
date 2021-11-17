@@ -1,70 +1,71 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sapin de Noël</title>
+    <title>Christmas Tree</title>
 </head>
 <body>
     <center>
         <?php
 
-            $nb_etoile_current = 1;
+            $nb_star_current = 1;
 
-            function affiche_etoile($nb_etoile) {
-                while ($nb_etoile > 0) {
-                    $nb_etoile -= 1;
+            function display_star($nb_star) {
+                while ($nb_star > 0) {
+                    $nb_star -= 1;
                     echo "*";
                 }
             }
 
-            function affiche_ligne($nb_ligne) {
-                global $nb_etoile_current;
-                while($nb_ligne > 0) {
-                    $nb_ligne -= 1;
-                    affiche_etoile($nb_etoile_current);
+            function display_line($nb_line) {
+                global $nb_star_current;
+                while($nb_line > 0) {
+                    $nb_line -= 1;
+                    display_star($nb_star_current);
                     echo "<br />";
-                    $nb_etoile_current += 2;
+                    $nb_star_current += 2;
                 }        
 
             }
 
-            function affiche_etage($nb_etage) {
-                global $nb_etoile_current;
+            function display_etage($nb_etage) {
+                global $nb_star_current;
                 $pos_etage = 1;
                 while ($pos_etage <= $nb_etage) {
-                    affiche_ligne($pos_etage + 3);
+                    display_line($pos_etage + 3);
                     $pos_etage += 1;
-                    $nb_etoile_current -= 4;
+                    $nb_star_current -= 4;
                 }
             }
             
-            affiche_etage(5); 
+            display_etage(5); 
 
            
             $nb_barre = 5;
 
-            function affiche_barre($nb_barre) {
+            function display_barre($nb_barre) {
                 while ($nb_barre > 0) {
                     $nb_barre -= 1;
                     echo "|";
                 }
             }
 
-            function affiche_ligne_barre($nb_ligne_barre) {
+            function display_line_barre($nb_line_barre) {
                 global $nb_barre;
-                while($nb_ligne_barre > 0) {
-                    $nb_ligne_barre -= 1;
-                    affiche_barre($nb_barre);
+                while($nb_line_barre > 0) {
+                    $nb_line_barre -= 1;
+                    display_barre($nb_barre);
                     echo "<br />";
                 }        
 
             }
 
-            affiche_ligne_barre(5);
-        ?>
-        
+            display_line_barre(5);
+
+
+?>
     </center>
 </body>
 </html>
